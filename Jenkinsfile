@@ -2,12 +2,16 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      echo "Running build stage"
-      mvn clean install
+      steps {
+        echo "Running build stage"
+        sh "mvn clean install"
+      }
     }
     stage('Execute jar') {
-      echo "Running jar exucute stage"
-      sh "java -jar target/jenkins-project-1.0-SNAPSHOT.jar"
+      steps {
+        echo "Running jar exucute stage"
+        sh "java -jar target/jenkins-project-1.0-SNAPSHOT.jar"
+      }
     }
   }
 }
