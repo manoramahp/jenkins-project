@@ -14,4 +14,10 @@ public class HelloTest {
         Hello hello = new Hello();
         Assert.assertTrue(hello.isSuccess(), "Success not true");
     }
+
+    @Test
+    public void testGetStr() {
+        Hello hello = new Hello();
+        Assert.assertEquals(hello.getStr(), "Test", "String 'Test' not received");
+    }
 }
